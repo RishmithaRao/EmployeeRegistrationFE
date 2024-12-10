@@ -1,0 +1,190 @@
+<!-- <div class="card">
+  <div class="card-header">
+    {{ pageTitle }}
+  </div>
+  <div class="card-body">
+    <div class="row" style="margin-bottom: 15px">
+      
+      <div class="col-md-3">
+        <button
+          class="btn btn-primary mr-3"
+          [routerLink]="['/employees/0/0/edit']"
+        >
+          <i class="fa fa-plus"></i> New Employee
+        </button>
+      </div>
+    </div>
+  
+    <hr style="background-color: black" />
+    <div class="table-responsive">
+      <table class="table mb-0" *ngIf="employees && employees.length">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Company</th>
+            <th>Designation</th>
+            <th>City</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="employees.length == 0">
+            <td colspan="7">No record found</td>
+          </tr>
+          <tr *ngFor="let employee of filteredEmployees">
+            <td>
+              <a [routerLink]="['/employees', employee.id, employee.city]">
+              </a>
+              {{ employee.name }}
+            </td>
+            <td>{{ employee.address }}</td>
+            <td>{{ employee.gender }}</td>
+            <td>{{ employee.company }}</td>
+            <td>{{ employee.designation }}</td>
+            <td>{{ employee.city }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.contact }}</td>
+            <td>
+              <button
+                class="btn btn-outline-primary btn-sm"
+                [routerLink]="[
+                  '/employees',
+                  employee.id,
+                  employee.city,
+                  'edit'
+                ]"
+              >
+                <i class="fa fa-edit"></i> Edit
+              </button>
+            </td>
+            <td>
+              <button
+                class="btn btn-outline-warning btn-sm"
+                (click)="
+                  deleteEmployee(employee.id, employee.name, employee.city)
+                "
+              >
+                <i class="fa fa-trash"></i> Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  Error: {{ errorMessage }}
+</div>
+ <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Please wait...</p>
+</ngx-spinner>  -->
+
+
+<div class="card-body">
+  <div class="row" style="margin-bottom: 15px">
+    
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-auto">
+          <h1 class="mb-0">Employee List</h1>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-primary"
+          [routerLink]="['/employees/0/0/edit']"
+        >
+          <i class="fa fa-plus"></i>
+          New Employee</button>
+        </div>
+      </div>
+<div class="search-input">
+        Search : <input type="text" placeholder="search employees here"  [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange()"/>    </div>
+        <br/>
+      
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Company</th>
+            <th>Designation</th>
+            <th>City</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th></th>
+            <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr *ngIf="employees.length == 0">
+          <td colspan="7">No record found</td>
+        </tr>
+        <tr *ngFor="let employee of filteredEmployees">
+          <td>
+            <a [routerLink]="['/employees', employee.id, employee.city]">
+            </a>
+            {{ employee.name }}
+          </td>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.gender }}</td>
+        <td>{{ employee.address }}</td>
+        <td>{{ employee.company }}</td>
+        <td>{{ employee.designation }}</td>
+        <td>{{ employee.city }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.contact }}</td>
+        <td>
+          <button
+            class="btn btn-outline-primary btn-sm"
+            [routerLink]="[
+              '/employees',
+              employee.id,
+              employee.city,
+              'edit'
+            ]"
+          >
+            <i class="fa fa-edit"></i> Edit
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-outline-warning btn-sm"
+            (click)="
+              deleteEmployee(employee.id, employee.name, employee.city)
+            "
+          >
+            <i class="fa fa-trash"></i> Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <div class="pagination-controls">
+    <button (click)="goToPage(1)" [disabled]="currentPage === 1">First</button>
+    <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ getTotalPages() }}</span>
+    <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage === getTotalPages()">Next</button>
+    <button (click)="goToPage(getTotalPages())" [disabled]="currentPage === getTotalPages()">Last</button>
+  </div>
+</div>
+</div>
+
+<app-loader [isLoading]="loading"></app-loader>
+
+

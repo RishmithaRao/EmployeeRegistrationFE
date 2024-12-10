@@ -1,0 +1,244 @@
+/* thead {    
+    color: #337AB7;    
+  }  
+  .content-body{
+    background: whitesmoke;
+  }
+  .pagination{
+    padding: 20px 16px;
+    float: right;
+    font-size: 18px;
+  }
+  .pagination::ng-deep .ngx-pagination .current{
+    background: brown;
+
+  }
+
+
+   /* pagination CSS */
+  /* .employee-list {
+    max-width: 800px;
+    margin: auto;
+  } */ */
+  
+  /* table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .pagination-controls {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .pagination-controls button {
+    padding: 5px 10px;
+    margin: 0 5px;
+  }
+   */
+  /* .pagination-controls button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  } */
+
+  /* Overall background and font color */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the employee-list container */
+/* .employee-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: auto; 
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+} */
+
+/* Title styling */
+h2 {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+/* Styling the table */
+table {
+  width: 100%; /* Make the table take up full width, but you can set a max-width */
+  max-width: 900px;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Table headers */
+th {
+  background-color: #eaeaea;
+  color: #333333;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  text-align: left; /* Ensure left alignment for headers */
+  white-space: nowrap; /* Prevent header text from wrapping */
+}
+
+/* Table data cells */
+td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  text-align: left; /* Align content to the left */
+  white-space: nowrap; /* Prevent text wrapping in the cells */
+  overflow: hidden; /* Hide content that overflows */
+  text-overflow: ellipsis; /* Add ellipsis (...) if the content is too long */
+}
+
+/* Last row (pagination) and button styling */
+.pagination-controls {
+  margin-top: 20px;
+}
+
+
+button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5a9bf1;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+span {
+  margin: 0 15px;
+  font-size: 16px;
+  color: #333333;
+}
+/* Delete button styling */
+/* .delete-btn {
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #ff6f6f; /* Light red color */
+  /* color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+} */ */
+
+/* .delete-btn:hover {
+  background-color: #f44336; /* Darker red color on hover */
+/* } */ */
+
+/* .delete-btn:disabled {
+  background-color: #cccccc; 
+  cursor: not-allowed;
+} */
+/* Container to align the search input */
+.search-container {
+  display: flex;                    /* Enable flexbox layout */
+  justify-content: flex-start;      /* Align the items to the left */
+  align-items: center;              /* Vertically center the input */
+  padding: 10px 20px;               /* Padding for spacing */
+  width: 100%;                      /* Ensure the container takes full width */
+  background-color: #f9f9f9;        /* Light background for the container */
+  border-radius: 8px;               /* Rounded corners for the container */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow to lift the container */
+  margin: 10px 0;                   /* Margin for spacing above and below the container */
+}
+
+/* Styling for the search input field */
+.search-input {
+  padding: 10px 15px;               /* Comfortable padding for the input */
+  font-size: 14px;                  /* Readable font size */
+  border-radius: 5px;               /* Rounded corners for the input */
+  border: 1px solid #ccc;          /* Soft gray border */
+  background-color: #ffffff;       /* White background for the input */
+  color: #333;                      /* Dark gray text color */
+  width: 100%;                      /* Input field takes full width of the container */
+  max-width: 400px;                 /* Max width to avoid it becoming too wide */
+  box-sizing: border-box;           /* Ensure padding is included in width */
+  transition: all 0.3s ease;        /* Smooth transition for border and shadow */
+}
+
+/* Input field on focus */
+.search-input:focus {
+  outline: none;                    /* Remove default outline */
+  border-color: #007bff;            /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);  /* Light blue glow */
+}
+
+/* Placeholder styling for a better look */
+.search-input::placeholder {
+  color: #aaa;                      /* Light gray placeholder text */
+  font-style: italic;               /* Italicize placeholder text */
+}
+
+/* Styling when the input field is hovered */
+.search-input:hover {
+  border-color: #007bff;            /* Blue border when hovering */
+  cursor: pointer;                  /* Pointer cursor to indicate interactivity */
+}
+.container {
+  max-width: 1200px; /* Limits the width */
+  margin: 0 auto;    /* Centers the container horizontally */
+  padding: 2rem;     /* Adds padding inside the container */
+  text-align: center; /* Centers content horizontally */
+  position: relative; /* Needed for positioning child elements */
+}
+
+.container h1 {
+  color: #007bff; /* Add your desired color for the heading */
+  margin-top: 0; /* Ensure there's no unwanted space above the heading */
+  padding: 10px; /* Adds some padding around the heading text */
+}
+
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004a9f;
+}
